@@ -1,0 +1,29 @@
+{
+  "name": "t3brightside/woe",
+  "description": "TYPO3 extension for windsurfonearth.com database",
+  "type": "typo3-cms-extension",
+  "keywords": ["TYPO3", "geolocation", "location", "gps", "map"],
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://t3brightside.com",
+  "authors": [
+      {
+          "name": "Tanel Põld",
+          "role": "Developer",
+          "homepage": "https://t3brightside.com"
+      }
+  ],
+  "require": {
+    "typo3/cms-core": "^12.4",
+    "typo3/cms-fluid-styled-content": "^12.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brightside\\Woe\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "woe"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+CREATE TABLE tx_woe_domain_model_location (
+	title tinytext,
+	county tinytext,
+	country tinytext,
+	lat tinytext,
+	lng tinytext,
+	timezone tinytext,
+	checkmarine int(1) DEFAULT '0' NOT NULL,
+	checktide int(1) DEFAULT '0' NOT NULL,
+	summary text,
+	info text,
+	person tinytext,
+	year int(4),
+	experience text,
+	images int(11) unsigned DEFAULT '0',
+	selected_categories text,
+	instagram tinytext,
+	liveweatherlink tinytext,
+	livetidelink tinytext,
+	KEY parent (pid),
+	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
+	KEY language (sys_language_uid)
+);
