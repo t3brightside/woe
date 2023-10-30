@@ -1,0 +1,70 @@
+config.no_cache = 1
+page = PAGE
+
+page.100 = CONTENT
+page.100 {
+#  no_cache = 1
+    table = tx_woe_domain_model_location
+    select.uidInList.data = gp:spot
+    select.pidInList = 0
+    select.selectFields = *
+    renderObj = COA
+    renderObj {
+      5 = TEXT
+      5.value.dataWrap = <button id="desc-close">X</button>
+      10 = TEXT
+      10.value.dataWrap = <h1 class="title">{field:title}</h1>
+      10.if.isTrue.data = field:title
+      11 = TEXT
+      11.value.dataWrap = <p class="country">{field:county} / {field:country}</p>
+      11.if.isTrue.data = field:country
+      20 = TEXT
+      20.value.dataWrap = <p class="summary"><b>{field:summary}</b></p>
+      20.if.isTrue.data = field:summary
+      30 = TEXT
+      30.value.dataWrap = {field:info}
+      30.if.isTrue.data = field:info
+      35 = TEXT
+      35.value = Live weather
+      35.typolink.parameter.dataWrap = {field:liveweatherlink} _blank
+      35.if.isTrue.data = field:liveweatherlink
+      36 = TEXT
+      36.value = |
+      36.noTrimWrap = | | |
+      36.if.isTrue.data = field:livetidelink
+      37 = TEXT
+      37.value = Live tides
+      37.typolink.parameter.dataWrap = {field:livetidelink} _blank
+      37.if.isTrue.data = field:livetidelink
+
+      40 = TEXT
+      40.value.dataWrap = <p class="person">by: <b>{field:person}</b></p>
+      40.if.isTrue.data = field:person
+
+      50 = TEXT
+      50.value.dataWrap = <p class="experience">{field:experience}</p>
+      50.if.isTrue.data = field:experience
+
+      8 = FILES
+      8 {
+          references {
+              table = tx_woe_domain_model_location
+              uid.data = gp:spot
+              fieldName = images
+          }
+          begin = 0
+          maxItems = 5
+          renderObj = COA
+          renderObj {
+            10 = IMAGE
+            10 {
+              file.import.dataWrap = {file:current:storage}:{file:current:identifier}
+              file.maxWidth = 600
+              altText.data = file:current:title
+            }
+            20 = TEXT
+            20.value.data = {file:current:title}
+          }
+      }
+    }
+}

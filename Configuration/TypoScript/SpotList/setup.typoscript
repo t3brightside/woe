@@ -1,0 +1,45 @@
+page = PAGE
+page.config {
+  disableAllHeaderCode = 1
+  additionalHeaders.10.header = Content-type:application/json
+}
+page.100 = CONTENT
+page.100 {
+    wrap = [|]
+    table = tx_woe_domain_model_location
+    select.pidInList = 2
+    select.selectFields = *
+    renderObj = COA
+    renderObj {
+        10 = TEXT
+        10.value = {
+        15 = TEXT
+        15.value.dataWrap = "id": "{field:uid}",
+          15.stdWrap.if {
+        isTrue {
+            field = summary
+        }
+    }
+        20 = TEXT
+        20.value.dataWrap = "city": "{field:title}",
+        30 = TEXT
+        30.value.dataWrap = "lat": "{field:lat}",
+        40 = TEXT
+        40.value.dataWrap = "lng": "{field:lng}",
+        50 = TEXT
+        50.value.dataWrap = "zone": "{field:timezone}",
+        60 = TEXT
+        60.value.dataWrap = "checkmarine": "{field:checkmarine}",
+        70 = TEXT
+        70.value.dataWrap = "checktide": "{field:checktide}"
+        75 = TEXT
+        75.value = },
+    }
+    stdWrap.replacement {
+        10 {
+            search = ,]
+            replace = ]
+            useRegExp = 0
+        }
+    }
+}
