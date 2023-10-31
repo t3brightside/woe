@@ -60,6 +60,7 @@ page.100 {
             10 {
               file.import.dataWrap = {file:current:storage}:{file:current:identifier}
               file.width = 904
+              file.crop.data = file:current:crop
               altText.data = file:current:title
             }
             20 = TEXT
