@@ -65,7 +65,7 @@ page.100 {
             }
             20 = TEXT
             20.value.data = file:current:title
-            20.wrap = <p class="title">|<p>
+            20.wrap = <p class="photo-title">|<p>
             20.if.isTrue.data = file:current:title
           }
       }
