@@ -59,7 +59,7 @@ page.100 {
             10 = IMAGE
             10 {
               file.import.dataWrap = {file:current:storage}:{file:current:identifier}
-              width = 600
+              file.width = 904
               altText.data = file:current:title
             }
             20 = TEXT
