@@ -56,7 +56,7 @@ return [
                 lat,lng,--linebreak--,
                 checkmarine,checktide,--linebreak--,
                 images,--linebreak--,
-                youtube,vimeo,--linebreak--
+                youtube,vimeo,--linebreak--,
                 summary,--linebreak--,
                 info,--linebreak--,
                 liveweatherlink,livetidelink,--linebreak--,
