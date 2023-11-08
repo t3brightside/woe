@@ -38,12 +38,22 @@ page.100 {
       37.if.isTrue.data = field:livetidelink
 
       40 = TEXT
-      40.value.dataWrap = <p class="person">by: <b>{field:person}</b></p>
+      40.value.dataWrap = <p class="person">by: <b>{field:person}</b> / {field:year}</p>
       40.if.isTrue.data = field:person
 
       50 = TEXT
       50.value.dataWrap = <p class="experience">{field:experience}</p>
       50.if.isTrue.data = field:experience
+      6 = TEXT
+      6.value.dataWrap (
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube-nocookie.com/embed/{field:youtube}?si=rVLcOGA3ZwVvxRPz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      )
+      6.if.isTrue.data = field:youtube
+      7 = TEXT
+      7.value.dataWrap (
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{field:vimeo}?h=44dfe6e10e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+      )
+      7.if.isTrue.data = field:vimeo
 
       8 = FILES
       8 {

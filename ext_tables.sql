@@ -13,6 +13,8 @@ CREATE TABLE tx_woe_domain_model_location (
 	year int(4),
 	experience text,
 	images int(11) unsigned DEFAULT '0',
+	youtube tinytext,
+	vimeo tinytext,
 	selected_categories text,
 	instagram tinytext,
 	liveweatherlink tinytext,

@@ -56,6 +56,7 @@ return [
                 lat,lng,--linebreak--,
                 checkmarine,checktide,--linebreak--,
                 images,--linebreak--,
+                youtube,vimeo,--linebreak--
                 summary,--linebreak--,
                 info,--linebreak--,
                 liveweatherlink,livetidelink,--linebreak--,
@@ -371,6 +372,28 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
+        ],
+        'youtube' => [
+            'exclude' => 1,
+            'label' => 'YouTube',
+            'config' => [
+                'type' => 'input',
+                'eval' => 'trim',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+            ]
+        ],
+        'vimeo' => [
+            'exclude' => 1,
+            'label' => 'Vimeo',
+            'config' => [
+                'type' => 'input',
+                'eval' => 'trim',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+            ]
         ],
         'summary' => [
             'exclude' => 1,
