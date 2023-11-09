@@ -7,7 +7,7 @@ page.100 = CONTENT
 page.100 {
     wrap = [|]
     table = tx_woe_domain_model_location
-    select.pidInList = 2
+    select.pidInList = {$woe.spotlistPid}
     select.selectFields = *
     renderObj = COA
     renderObj {
