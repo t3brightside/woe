@@ -15,13 +15,11 @@ page.100 {
         10.value = {
         15 = TEXT
         15.value.dataWrap = "id": "{field:uid}",
-          15.stdWrap.if {
-        isTrue {
-            field = summary
-        }
-    }
+        15.stdWrap.if.isTrue.field = summary
         20 = TEXT
         20.value.dataWrap = "city": "{field:title}",
+        25 = TEXT
+        25.value.dataWrap = "city": "{field:summary}",
         30 = TEXT
         30.value.dataWrap = "lat": "{field:lat}",
         40 = TEXT
