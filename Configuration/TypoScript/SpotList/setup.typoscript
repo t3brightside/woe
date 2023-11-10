@@ -19,7 +19,9 @@ page.100 {
         20 = TEXT
         20.value.dataWrap = "city": "{field:title}",
         25 = TEXT
-        25.value.dataWrap = "city": "{field:summary}",
+        25.stdWrap.htmlSpecialChars = 1
+        25.value.field = summary
+        25.wrap = "summary": "|",
         30 = TEXT
         30.value.dataWrap = "lat": "{field:lat}",
         40 = TEXT
