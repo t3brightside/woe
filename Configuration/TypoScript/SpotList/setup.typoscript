@@ -15,7 +15,34 @@ page.100 {
         10.value = {
         15 = TEXT
         15.value.dataWrap = "id": "{field:uid}",
-        15.stdWrap.if.isTrue.field = summary
+        15.stdWrap.if.isTrue.cObject = COA
+        15.stdWrap.if.isTrue.cObject {
+            10 = TEXT
+            10 {
+                value = 1
+                if.isTrue.field = summary
+            }
+            20 = TEXT
+            20 {
+                value = 1
+                isTrue.field = youtube
+            }
+            30 = TEXT
+            30 {
+                value = 1
+                isTrue.field = vimeo
+            }
+            40 = TEXT
+            40 {
+                value = 1
+                isTrue.field = info
+            }
+            50 = TEXT
+            50 {
+                value = 1
+                isTrue.field = liveweatherlink
+            }
+        }
         20 = TEXT
         20.value.dataWrap = "city": "{field:title}",
         25 = TEXT
