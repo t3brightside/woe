@@ -1,0 +1,74 @@
+config.no_cache = 1
+page = PAGE
+page.config {
+  disableAllHeaderCode = 1
+  additionalHeaders.10.header = Content-type:application/json
+}
+page.110 = CONTENT
+page.110 {
+    wrap = [|]
+    table = tx_woe_domain_model_location
+    select.uidInList.data = gp:spot
+    select.pidInList = 0
+    select.selectFields = *
+    renderObj = COA
+    renderObj {
+        10 = TEXT
+        10.value = {
+        15 = TEXT
+        15.value.dataWrap = "title": "{field:title}",
+        20 = TEXT
+        20.value.dataWrap = "country": "{field:county} / {field:country}",
+        25 = TEXT
+        25.value.dataWrap = "summary": "{field:summary}",
+        30 = TEXT
+        30.value.dataWrap = "lat": "{field:lat}",
+        40 = TEXT
+        40.value.dataWrap = "lng": "{field:lng}",
+        50 = TEXT
+        50.value.field = info
+        50.stdWrap.htmlSpecialChars = 1
+        50.wrap = "info": "|",
+        60 = TEXT
+        60.value.dataWrap = "person": "{field:person}",
+        70 = TEXT
+        70.value.dataWrap = "year": "{field:year}",
+        80 = TEXT
+        80.value.dataWrap = "experience": "{field:experience}",
+        90 = TEXT
+        90.value.dataWrap = "youtube": "{field:youtube}",
+        100 = TEXT
+        100.value.dataWrap = "vimeo": "{field:vimeo}",
+        110 = TEXT
+        110.value.dataWrap = "liveweather": "{field:liveweatherlink}",
+        120 = TEXT
+        120.value.dataWrap = "livetide": "{field:livetidelink}",
+        130 = FILES
+        130 {
+          references {
+              table = tx_woe_domain_model_location
+              uid.data = gp:spot
+              fieldName = images
+          }
+          begin = 0
+          maxItems = 5
+          renderObj = COA
+          renderObj {
+            10 = IMG_RESOURCE
+            10 {
+              file.import.dataWrap = {file:current:storage}:{file:current:identifier}
+              file.width = 904
+              file.crop.data = file:current:crop
+              altText.data = file:current:title
+            }
+            10.stdWrap.wrap = "image": "|",
+            20 = TEXT
+            20.value.data = file:current:title
+            20.wrap = "imgtitle": "|",
+            20.if.isTrue.data = file:current:title
+          }
+        }
+        150 = TEXT
+        150.value = }
+    }
+}

@@ -9,6 +9,12 @@ ExtensionManagementUtility::addStaticFile(
 
 ExtensionManagementUtility::addStaticFile(
     'woe',
+    'Configuration/TypoScript/SpotDetailJson/',
+    'WOE - Spot Detail JSON'
+);
+
+ExtensionManagementUtility::addStaticFile(
+    'woe',
     'Configuration/TypoScript/SpotList/',
     'WOE - JSON Spot List'
 );
