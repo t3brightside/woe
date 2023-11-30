@@ -11,56 +11,60 @@ page.100 {
     select.selectFields = *
     renderObj = COA
     renderObj {
-        10 = TEXT
-        10.value = {
+      10 = TEXT
+      10.value = {
         15 = TEXT
         15.value.dataWrap = "id": "{field:uid}",
-        15.stdWrap.if.isTrue.cObject = COA
-        15.stdWrap.if.isTrue.cObject {
-            10 = TEXT
-            10 {
-                value = 1
-                if.isTrue.field = summary
-            }
-            20 = TEXT
-            20 {
-                value = 1
-                isTrue.field = youtube
-            }
-            30 = TEXT
-            30 {
-                value = 1
-                isTrue.field = vimeo
-            }
-            40 = TEXT
-            40 {
-                value = 1
-                isTrue.field = info
-            }
-            50 = TEXT
-            50 {
-                value = 1
-                isTrue.field = liveweatherlink
-            }
-        }
-        20 = TEXT
-        20.value.dataWrap = "city": "{field:title}",
-        25 = TEXT
-        25.value.field = summary
-        25.stdWrap.htmlSpecialChars = 1
-        25.wrap = "summary": "|",
-        30 = TEXT
-        30.value.dataWrap = "lat": "{field:lat}",
-        40 = TEXT
-        40.value.dataWrap = "lng": "{field:lng}",
-        50 = TEXT
-        50.value.dataWrap = "zone": "{field:timezone}",
-        60 = TEXT
-        60.value.dataWrap = "checkmarine": "{field:checkmarine}",
-        70 = TEXT
-        70.value.dataWrap = "checktide": "{field:checktide}"
-        75 = TEXT
-        75.value = },
+        15.stdWrap.if {
+              isTrue.cObject = COA
+              isTrue.cObject {
+                  10 = TEXT
+                  10 {
+                      value = 1
+                      if.isTrue.field = summary
+                  }
+                  20 = TEXT
+                  20 {
+                      value = 1
+                      if.isTrue.field = youtube
+                  }
+                  30 = TEXT
+                  30 {
+                      value = 1
+                      if.isTrue.field = vimeo
+                  }
+                  40 = TEXT
+                  40 {
+                      value = 1
+                      if.isTrue.field = info
+                  }
+                  50 = TEXT
+                  50 {
+                      value = 1
+                      if.isTrue.field = liveweatherlink
+                  }
+              }
+          }
+
+
+          20 = TEXT
+          20.value.dataWrap = "city": "{field:title}",
+          25 = TEXT
+          25.value.field = summary
+          25.stdWrap.htmlSpecialChars = 1
+          25.wrap = "summary": "|",
+          30 = TEXT
+          30.value.dataWrap = "lat": "{field:lat}",
+          40 = TEXT
+          40.value.dataWrap = "lng": "{field:lng}",
+          50 = TEXT
+          50.value.dataWrap = "zone": "{field:timezone}",
+          60 = TEXT
+          60.value.dataWrap = "checkmarine": "{field:checkmarine}",
+          70 = TEXT
+          70.value.dataWrap = "checktide": "{field:checktide}"
+          75 = TEXT
+          75.value = },
     }
     stdWrap.replacement {
         10 {
